@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Üçel Mermer Granit   Web Sitesi
 
-## Getting Started
+Bu proje, mermer ve doğal taş sektöründe faaliyet gösteren üçel mermer granit için geliştirilmiş modern bir web sitesi uygulamasıdır. Ürün kataloğu, proje portföyü, iletişim yönetimi ve kapsamlı bir yönetim paneli içermektedir.
 
-First, run the development server:
+Kullanılan Teknolojiler
 
+Frontend**
+  - Next.js 15.3
+  - React 19
+  - TailwindCSS
+  - Lucide React (İkonlar)
+
+Backend**
+  - Next.js API Routes
+  - Prisma ORM
+  - SQLite Veritabanı
+  - NextAuth.js (Kimlik Doğrulama)
+  - Bcrypt (Şifreleme)
+
+Kurulum Talimatları
+
+1. Projeyi klonlayın:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [repo-url]
+cd marble-website
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Bağımlılıkları yükleyin:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. `.env` dosyasını oluşturun:
+```env
+DATABASE_URL="file:./prisma/dev.db"
+NEXTAUTH_SECRET="your-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Veritabanını oluşturun ve başlangıç verilerini yükleyin:
+```bash
+npx prisma migrate dev
+npx prisma db seed
+```
 
-## Learn More
+5. Geliştirme sunucusunu başlatın:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Uygulama http://localhost:3000 adresinde çalışmaya başlayacaktır.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Admin Paneli Giriş Bilgileri
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Admin paneline erişmek için aşağıdaki bilgileri kullanabilirsiniz:
 
-## Deploy on Vercel
+- **URL**: http://localhost:3000/admin
+- **E-posta**: admin@marble.com
+- **Şifre**: admin123
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Özellikler
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-  Responsive tasarım
+-  Kapsamlı yönetim paneli
+-  Ürün ve proje görselleri yönetimi
+-  İletişim formu ve mesaj yönetimi
+-  Kullanıcı yönetimi
+-  Kategori ve ürün yönetimi
+-  Proje portföyü
+-  Site ayarları yönetimi
+
+Proje Yapısı
+
+- `/src/app` - Sayfa bileşenleri ve API rotaları
+- `/src/components` - Yeniden kullanılabilir UI bileşenleri
+- `/prisma` - Veritabanı şeması ve migration dosyaları
+- `/public` - Statik dosyalar
+
+
